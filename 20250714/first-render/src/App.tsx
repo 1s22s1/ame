@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Button, Stack } from '@mui/material';
 
@@ -15,6 +15,10 @@ function App() {
     setCount(count - 1);
     setIsFirst(false);
   }
+
+  useEffect(() => {
+    document.title = `count is ${count}`
+  }, [count]);
 
   return (
     <>
