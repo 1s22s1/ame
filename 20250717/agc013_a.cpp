@@ -29,28 +29,29 @@ int main()
     }
 
     ll answer = 0;
-    ll i = 0;
-    while (i < N - 1)
+    rep(i, N)
     {
-        ll j = i;
-        if (A.at(i) >= A.at(i + 1))
+        while (i < N - 1 && A.at(i) == A.at(i + 1))
         {
-            while (j < N - 1 && A.at(j) >= A.at(j + 1))
+            i++;
+        }
+
+        if (i < N - 1 && A.at(i) < A.at(i + 1))
+        {
+            while (i < N - 1 && A.at(i) <= A.at(i + 1))
             {
-                j++;
+                i++;
             }
         }
         else
         {
-            while (j < N - 1 && A.at(j) < A.at(j + 1))
+            while (i < N - 1 && A.at(i) >= A.at(i + 1))
             {
-                j++;
+                i++;
             }
         }
 
         answer++;
-        cout << i << ' ' << j << endl;
-        i = j + 1;
     }
 
     cout << answer << endl;
