@@ -3,7 +3,7 @@ import { Layer, Rect, Stage } from 'react-konva'
 
 import chroma from 'chroma-js';
 import { TwitterShareButton, TwitterIcon } from 'react-share';
-import { Stack } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 
 function App() {
   const stageBand = window.innerWidth / 2;
@@ -21,9 +21,12 @@ function App() {
         </Stage >
 
 
-        <TwitterShareButton title={title} url={url}>
-          <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
+        <Stack direction={'row'} spacing={2}>
+          <Button variant='outlined' >DOWNLOAD ME</Button>
+          <TwitterShareButton title={title} url={url}>
+            <TwitterIcon size={32} round={true} />
+          </TwitterShareButton>
+        </Stack>
       </Stack>
     </>
   )
